@@ -1,5 +1,6 @@
-import type { PacoteType } from './types'; 
-export default function Pacote({ largura, altura, profundidade, peso, id }: PacoteType) {
+import type { PacoteProps } from './types';
+
+export default function Pacote({ id, largura, altura, profundidade, peso }: PacoteProps) {
   return (
     <div className="pacote">
       <div>id</div>
@@ -15,4 +16,3 @@ export default function Pacote({ largura, altura, profundidade, peso, id }: Paco
     </div>
   );
 }
-
