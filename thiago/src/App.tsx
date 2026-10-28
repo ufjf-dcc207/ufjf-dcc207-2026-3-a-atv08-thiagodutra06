@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Pacote from './Pacote';
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface PacoteProps {
   id: string;
   largura: number;

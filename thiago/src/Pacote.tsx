@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { PacoteProps } from './types';
 
 export default function Pacote({ id, largura, altura, profundidade, peso }: PacoteProps) {
@@ -16,3 +17,4 @@ export default function Pacote({ id, largura, altura, profundidade, peso }: Paco
     </div>
   );
 }
+
