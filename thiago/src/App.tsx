@@ -1,7 +1,6 @@
 import './App.css'
 import Pacote, { type PacoteType } from './Pacote'
 
-
 const data: Array<PacoteType> = [
   {
     id: '9281d08a-7978-40ad-9ae3-d6659a503ef3',
@@ -21,14 +20,14 @@ const data: Array<PacoteType> = [
 
 export default function App() {
   return (
-    
-    <dl className="pacote">
+    <div>
       {data.map(pacote => (
         <Pacote key={pacote.id} pacote={pacote} />
       ))}
-    </dl>
+    </div>
   )
 }
+
 
 
 

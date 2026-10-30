@@ -1,6 +1,5 @@
 import "./Pacote.css";
 
-
 export type PacoteType = {
   id: string;
   largura: number;
@@ -9,13 +8,13 @@ export type PacoteType = {
   peso: number;
 };
 
-type PacoteProps = {
+export type PacoteProps = {
   pacote: PacoteType;
-};
+}
 
 export default function Pacote({ pacote }: PacoteProps) {
   return (
-    <>
+    <div className="pacote">
       <dt>{pacote.id}</dt>
       <dd></dd>
       
@@ -30,9 +29,10 @@ export default function Pacote({ pacote }: PacoteProps) {
       
       <dt>Peso (Kg)</dt>
       <dd>{pacote.peso}</dd>
-    </>
+    </div>
   );
 }
+
 
 
 
