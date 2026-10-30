@@ -1,18 +1,15 @@
-.Pacote {
-
-    display:flex;
-    flex-wrap: wrap;
-    gap: 12px;
-
+.pacote {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.2rem;
 }
 
-.counter {
-    font-size: 16px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: var(--accent);
-    background: var(--accent);
-    border: 2px solid transparent;
-    transition: border-color 0.3s;
-    margin-bottom: 24px;
+.pacote * {
+  background-color: light-dark(#aaaaaa, #dddddd);
+  padding: 0.2rem;
 }
+
+dd {
+  margin: 0;
+}
+
