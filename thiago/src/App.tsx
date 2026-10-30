@@ -1,5 +1,6 @@
-import './App.css'
-import Pacote, { type PacoteType } from './Pacote'
+import { useState } from 'react';
+import './App.css';
+import Pacote, { type PacoteType } from './Pacote';
 
 const data: Array<PacoteType> = [
   {
@@ -19,13 +20,23 @@ const data: Array<PacoteType> = [
 ];
 
 export default function App() {
+  const [pacotes, setPacotes] = useState(data);
+
+  function excluiPacote(id: string) {
+    setPacotes(pacotes.filter(pacote => pacote.id !== id));
+  }
+
   return (
     <div>
-      {data.map(pacote => (
-        <Pacote key={pacote.id} pacote={pacote} />
+      {pacotes.map(pacote => (
+        <Pacote 
+          key={pacote.id} 
+          pacote={pacote} 
+          onExcluir={() => excluiPacote(pacote.id)} 
+        />
       ))}
     </div>
-  )
+  );
 }
 
 

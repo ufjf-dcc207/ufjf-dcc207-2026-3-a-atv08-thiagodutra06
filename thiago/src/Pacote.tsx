@@ -10,13 +10,16 @@ export type PacoteType = {
 
 export type PacoteProps = {
   pacote: PacoteType;
-}
+  onExcluir: () => void;
+};
 
-export default function Pacote({ pacote }: PacoteProps) {
+export default function Pacote({ pacote, onExcluir }: PacoteProps) {
   return (
     <div className="pacote">
       <dt>{pacote.id}</dt>
-      <dd></dd>
+      <dd>
+        <button onClick={onExcluir}>🗑️</button>
+      </dd>
       
       <dt>Largura (cm)</dt>
       <dd>{pacote.largura}</dd>
@@ -26,12 +29,22 @@ export default function Pacote({ pacote }: PacoteProps) {
       
       <dt>Altura (cm)</dt>
       <dd>{pacote.altura}</dd>
+
+      <dt>Cubagem (m³)</dt>
+      <dd>
+        {400 * 
+         (pacote.largura / 100) * 
+         (pacote.profundidade / 100) * 
+         (pacote.altura / 100)}
+      </dd>
       
       <dt>Peso (Kg)</dt>
       <dd>{pacote.peso}</dd>
     </div>
   );
 }
+
+
 
 
 
