@@ -1,43 +1,23 @@
 import { useState } from 'react';
 import './App.css';
-import Pacote, { type PacoteType } from './Pacote';
+import { type PacoteType, data } from './Pacote'; 
+import ListagemDePacotes from './ListagemDePacotes';
 
-const data: Array<PacoteType> = [
-  {
-    id: '9281d08a-7978-40ad-9ae3-d6659a503ef3',
-    largura: 10,
-    profundidade: 20,
-    altura: 30,
-    peso: 5
-  },
-  {
-    id: 'b303bc37-46ca-45a8-9a24-9c046731b849',
-    largura: 30,
-    profundidade: 40,
-    altura: 20,
-    peso: 20
-  }
-];
+function App() {
+  const [pacotes, setPacotes] = useState<PacoteType[]>(data);
 
-export default function App() {
-  const [pacotes, setPacotes] = useState(data);
-
-  function excluiPacote(id: string) {
+  function excluirPacote(id: string) {
     setPacotes(pacotes.filter(pacote => pacote.id !== id));
   }
 
   return (
-    <div>
-      {pacotes.map(pacote => (
-        <Pacote 
-          key={pacote.id} 
-          pacote={pacote} 
-          onExcluir={() => excluiPacote(pacote.id)} 
-        />
-      ))}
+    <div className="app-container">
+      <ListagemDePacotes pacotes={pacotes} excluirPacote={excluirPacote} />
     </div>
   );
 }
+
+export default App;
 
 
 
